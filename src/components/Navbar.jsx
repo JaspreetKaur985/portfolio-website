@@ -1,13 +1,22 @@
 import React from "react";
 
+const navItems = [
+  "Home",
+  "About",
+  "Skills",
+  "Projects",
+  "Resume",
+  "Contact",
+];
+
 const Navbar = () => (
-  <nav className="fixed top-0 w-full text-[#FAF3E0] z-50">
-    <div className="max-w-6xl mx-auto px-6 md:px-20 py-4 flex justify-center space-x-10 text-base font-semibold tracking-wide">
-      {["Home", "About", "Skills", "Projects", "Resume", "Contact"].map((item) => (
+  <nav className="fixed top-0 left-0 z-50 w-full">
+    <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-x-5 gap-y-2 px-4 py-4 text-xs font-semibold tracking-wide text-[#FAF3E0] sm:gap-x-7 sm:text-sm md:flex-nowrap md:gap-x-10 md:px-8 md:text-base">
+      {navItems.map((item) => (
         <a
           key={item}
           href={`#${item.toLowerCase()}`}
-          className="hover:text-[#E7A6A1] transition duration-300 ease-in-out"
+          className="whitespace-nowrap transition duration-300 ease-in-out hover:text-[#E7A6A1]"
         >
           {item}
         </a>

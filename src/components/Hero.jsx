@@ -68,50 +68,53 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Image Section */}
-<div className="relative flex justify-center md:justify-end md:pr-10 mt-10">
-  {/* Ticker Image - Top Layer */}
+       {/* Image Section */}
+<div className="relative mt-12 flex min-h-[460px] w-full items-center justify-center md:mt-0 md:min-h-[600px] md:justify-end">
+
+  {/* Ticker Image */}
   <div
     onMouseEnter={() => setHoveredImage("ticker")}
     onMouseLeave={() => setHoveredImage(null)}
-    className={`absolute top-[-60px] left-[-160px] relative z-20 w-64 h-64 md:w-72 md:h-72 rounded-2xl p-2 bg-white/10 backdrop-blur-md transition-transform duration-300 cursor-pointer
+    className={`absolute top-4 left-6 sm:left-12 md:left-auto md:right-44 md:top-8
+      h-56 w-56 sm:h-64 sm:w-64 md:h-72 md:w-72
+      rounded-2xl bg-white/10 p-2 backdrop-blur-md cursor-pointer transition-all duration-300
       ${
         hoveredImage === "ticker"
-          ? "scale-105 shadow-[0_0_100px_20px_rgba(255,105,135,0.6)]"
-          : "shadow-[0_0_60px_10px_rgba(255,105,135,0.3)]"
-      }
-    `}
+          ? "scale-105 shadow-[0_0_100px_20px_rgba(255,105,135,0.6)] z-30"
+          : "shadow-[0_0_60px_10px_rgba(255,105,135,0.3)] z-20"
+      }`}
   >
-    <div className="absolute inset-0 bg-gradient-to-tr from-rose-300 via-pink-300 to-yellow-300 opacity-30 rounded-2xl blur-3xl -z-10" />
+    <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-tr from-rose-300 via-pink-300 to-yellow-300 opacity-30 blur-3xl" />
 
     <img
       src={tickerImage}
       alt="Ticker Graphic"
-      className="w-full h-full object-cover rounded-2xl"
+      className="h-full w-full rounded-2xl object-cover"
     />
   </div>
 
-  {/* Profile Image - Slightly Overlapping Bottom Right */}
+  {/* Profile Image */}
   <div
     onMouseEnter={() => setHoveredImage("profile")}
     onMouseLeave={() => setHoveredImage(null)}
-    className={`absolute bottom-[-80px] right-[-50px] w-64 h-64 md:w-72 md:h-72 rounded-2xl p-2 bg-white/10 backdrop-blur-md transition-transform duration-300 cursor-pointer
+    className={`absolute bottom-4 right-6 sm:right-12 md:right-0 md:bottom-10
+      h-60 w-60 sm:h-68 sm:w-68 md:h-80 md:w-80
+      rounded-2xl bg-white/10 p-2 backdrop-blur-md cursor-pointer transition-all duration-300
       ${
         hoveredImage === "profile"
-          ? "scale-105 shadow-[0_0_100px_20px_rgba(255,105,135,0.6)]"
-          : "shadow-[0_0_60px_10px_rgba(255,105,135,0.3)]"
-      }
-    `}
-    style={{ zIndex: hoveredImage === "profile" ? 25 : 10 }}
+          ? "scale-105 shadow-[0_0_100px_20px_rgba(255,105,135,0.6)] z-30"
+          : "shadow-[0_0_60px_10px_rgba(255,105,135,0.3)] z-10"
+      }`}
   >
-    <div className="absolute inset-0 bg-gradient-to-tr from-rose-300 via-pink-300 to-yellow-300 opacity-30 rounded-2xl blur-3xl -z-10" />
+    <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-tr from-rose-300 via-pink-300 to-yellow-300 opacity-30 blur-3xl" />
 
     <img
       src={profileImage}
       alt="Jaspreet Kaur"
-      className="w-full h-full object-cover rounded-2xl"
+      className="h-full w-full rounded-2xl object-contain p-2"
     />
   </div>
+
 </div>
       </div>
 
